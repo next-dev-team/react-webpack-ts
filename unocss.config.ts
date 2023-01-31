@@ -16,6 +16,15 @@ const selectTheme = (
 
 export function createConfig({ dev = true } = {}) {
   return defineConfig({
+
+    // watch file change
+    exclude: [
+      'src/**/**.(js|ts|md)',
+      'src/**.(js|ts|md)',
+      'src/**/**/**.(js|ts|md)',
+      'src/**/**/**/**.(js|ts|md)',
+      'src/**/**/**/**.(js|ts|md)'
+    ],
     envMode: dev ? 'dev' : 'build',
     presets: [
       presetUno(),
@@ -53,7 +62,7 @@ export function createConfig({ dev = true } = {}) {
     rules: [
       [
         /bg-linear-colorPrimary/,
-        (_, {}) => {
+        (_, { }) => {
           return {
             background: `radial-gradient(90.16% 143.01% at 15.32% 21.04%, rgba(254, 209, 46, 0.2) 0%, rgba(255, 225, 115, 0.2) 77.08%, rgba(255, 255, 255, 0.2) 100%)`,
             'background-blend-mode': `overlay, normal`,

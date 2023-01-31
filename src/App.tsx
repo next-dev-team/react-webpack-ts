@@ -18,6 +18,11 @@ const HomePage = () => {
       }>
         <h1>{t('title', { name: 'Jonh' })}
         </h1>
+        
+        <div className='h-30px w-100px bg-linear-colorPrimary'>
+          Uno Css
+        </div>
+
 
         <Space>
           <SecondaryButton onClick={() => changeLang('km')}>Change to Khmer</SecondaryButton>

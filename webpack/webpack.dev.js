@@ -8,6 +8,7 @@ module.exports = {
     hot: true,
     open: false,
   },
+  cache:true,
   plugins: [
     new ReactRefreshWebpackPlugin(),
     new webpack.DefinePlugin({

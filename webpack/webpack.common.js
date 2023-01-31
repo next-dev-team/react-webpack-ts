@@ -1,6 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
-const UnoCSS = require('@unocss/webpack').default
+// const UnoCSS = require('@unocss/webpack').default
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
@@ -9,7 +9,6 @@ module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },
-  cache :false,
   module: {
     rules: [
       {
@@ -40,7 +39,7 @@ module.exports = {
     filename: 'bundle.js',
   },
   plugins: [
-    UnoCSS(),
+    // UnoCSS(),
     new webpack.ProvidePlugin({
       t: [require.resolve('../src/i18n/config.ts'), 'default'],
       Icon: [require.resolve('../src/components/Icon/index.ts'), 'default'],

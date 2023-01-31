@@ -1,4 +1,4 @@
-import { presetPalettes } from '@ant-design/colors';
+import { presetPalettes } from '@ant-design/colors/es';
 import { colors as unoColors } from '@unocss/preset-mini/colors';
 
 /**

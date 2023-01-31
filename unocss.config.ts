@@ -18,13 +18,7 @@ export function createConfig({ dev = true } = {}) {
   return defineConfig({
 
     // watch file change
-    exclude: [
-      'src/**/**.(js|ts|md)',
-      'src/**.(js|ts|md)',
-      'src/**/**/**.(js|ts|md)',
-      'src/**/**/**/**.(js|ts|md)',
-      'src/**/**/**/**.(js|ts|md)'
-    ],
+
     envMode: dev ? 'dev' : 'build',
     presets: [
       presetUno(),

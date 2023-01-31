@@ -1,6 +1,5 @@
 import { Button, Card, ConfigProvider, Space } from 'antd'
 import { changeLanguage } from 'i18next'
-import { StyleProvider } from '@ant-design/cssinjs'
 import NiceModal from '@ebay/nice-modal-react'
 import { themeConfig } from './theme'
 import SecondaryButton from './components/General/SecondaryButton'
@@ -11,6 +10,8 @@ const HomePage = () => {
     forceReload && location.reload()
   }
 
+
+
   return (
     <Space wrap>
       <Card title="Common Stater" extra={
@@ -19,7 +20,7 @@ const HomePage = () => {
         <h1>{t('title', { name: 'Jonh' })}
         </h1>
         
-        <div className='h-30px w-100px bg-linear-colorPrimary'>
+        <div className='h-30px w-100px bg-colorPrimary rounded mb-2'>
           Uno Css
         </div>
 
@@ -44,7 +45,6 @@ export const App = () => {
       // locale={selectLocale}
       >
         {/* hashPriority to low will enable override such as tailwind etc*/}
-        <StyleProvider hashPriority="low">
           <NiceModal.Provider>
             {/* <PusherProvider {...(defaultSettings.pusherConfig as any)}> */}
             {/* ---- children ----- */}
@@ -52,7 +52,6 @@ export const App = () => {
             {/* ----------------- */}
             {/* </PusherProvider> */}
           </NiceModal.Provider>
-        </StyleProvider>
       </ConfigProvider>
     </>
   )

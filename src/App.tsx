@@ -1,16 +1,54 @@
+import { Button, Card, ConfigProvider, Space } from 'antd'
 import { changeLanguage } from 'i18next'
+import { StyleProvider } from '@ant-design/cssinjs'
+import NiceModal from '@ebay/nice-modal-react'
+import { themeConfig } from './theme'
+import SecondaryButton from './components/General/SecondaryButton'
 
-export const App = () => {
+const HomePage = () => {
   const changeLang = (lang: 'km' | 'en', forceReload = true) => {
     changeLanguage(lang)
     forceReload && location.reload()
   }
 
   return (
+    <Space wrap>
+      <Card title="Common Stater" extra={
+        <Icon className='emojione:flag-for-cambodia' />
+      }>
+        <h1>{t('title', { name: 'Jonh' })}
+        </h1>
+
+        <Space>
+          <SecondaryButton onClick={() => changeLang('km')}>Change to Khmer</SecondaryButton>
+          <Button type='primary' onClick={() => changeLang('en')}>Change to English</Button>
+        </Space>
+      </Card>
+    </Space>
+  )
+}
+
+
+
+export const App = () => {
+  return (
     <>
-      <h1>{t('title', { name: 'Jonh' })}</h1>
-      <button onClick={() => changeLang('km')}>Change To Khmer</button>
-      <button onClick={() => changeLang('en')}>Change to English</button>
+      <ConfigProvider
+        // https://ant.design/theme-editor
+        theme={themeConfig}
+      // locale={selectLocale}
+      >
+        {/* hashPriority to low will enable override such as tailwind etc*/}
+        <StyleProvider hashPriority="low">
+          <NiceModal.Provider>
+            {/* <PusherProvider {...(defaultSettings.pusherConfig as any)}> */}
+            {/* ---- children ----- */}
+            <HomePage />
+            {/* ----------------- */}
+            {/* </PusherProvider> */}
+          </NiceModal.Provider>
+        </StyleProvider>
+      </ConfigProvider>
     </>
   )
 }

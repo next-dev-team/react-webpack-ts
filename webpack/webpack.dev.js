@@ -1,6 +1,7 @@
 const webpack = require('webpack')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
+/** @type { import('webpack').Configuration } */
 module.exports = {
   mode: 'development',
   devtool: 'cheap-module-source-map',

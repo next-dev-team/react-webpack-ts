@@ -1,13 +1,16 @@
 const path = require('path')
 const webpack = require('webpack')
-// const UnoCSS = require('@unocss/webpack').default
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+/** @type { import('webpack').Configuration } */
 module.exports = {
   entry: path.resolve(__dirname, '..', './src/index.tsx'),
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
+    alias:{
+      "@": path.resolve(__dirname, "/src"),
+    }
   },
   module: {
     rules: [

@@ -28,7 +28,9 @@
 .\!hover\:bg-colorFillSecondary:hover{--un-bg-opacity:0.06 !important;background-color:rgba(0,0,0,var(--un-bg-opacity)) !important;}
 .bg-colorFillTertiary{--un-bg-opacity:0.04;background-color:rgba(0,0,0,var(--un-bg-opacity));}
 .bg-colorPrimary{--un-bg-opacity:1;background-color:rgba(254,209,46,var(--un-bg-opacity));}
+.px-2{padding-left:0.5rem;padding-right:0.5rem;}
 .text-3xl{font-size:1.875rem;line-height:2.25rem;}
+.leading-30px{line-height:30px;}
 .hover\:op-80:hover{opacity:0.8;}
 @keyframes __un_qm{0%{box-shadow:inset 4px 4px #ff1e90, inset -4px -4px #ff1e90}100%{box-shadow:inset 8px 8px #3399ff, inset -8px -8px #3399ff}}
 .\?{animation:__un_qm 0.5s ease-in-out alternate infinite;}

@@ -2,15 +2,13 @@ import { Button, Card, ConfigProvider, Space } from 'antd'
 import { changeLanguage } from 'i18next'
 import NiceModal from '@ebay/nice-modal-react'
 import { themeConfig } from './theme'
-import SecondaryButton from './components/General/SecondaryButton'
+import SecondaryButton from '@/components/General/SecondaryButton'
 
 const HomePage = () => {
   const changeLang = (lang: 'km' | 'en', forceReload = true) => {
     changeLanguage(lang)
     forceReload && location.reload()
   }
-
-
 
   return (
     <Space wrap>
@@ -20,10 +18,9 @@ const HomePage = () => {
         <h1>{t('title', { name: 'Jonh' })}
         </h1>
         
-        <div className='h-30px w-100px bg-colorPrimary rounded mb-2'>
+        <div className='h-30px w-100px bg-colorPrimary rounded mb-2 leading-30px px-2'>
           Uno Css
         </div>
-
 
         <Space>
           <SecondaryButton onClick={() => changeLang('km')}>Change to Khmer</SecondaryButton>
